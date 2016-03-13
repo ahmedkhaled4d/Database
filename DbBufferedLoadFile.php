@@ -8,9 +8,7 @@
         A class for buffering LOAD DATA INFILE statements.
 
     AUTHOR
-        Ahmed Khaled Mohammed, 02/2016.
-
-   
+        Ahmed Khaled Mohammed, 03/2016.
 	. Some rewriting due to the optimizations on the BufferedOperation class.
 
  **************************************************************************************************************/
