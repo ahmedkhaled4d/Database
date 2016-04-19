@@ -65,7 +65,7 @@ class  DbBufferedInsert		extends  DbBufferedOperation
 	  
 	 	$buffer_size (integer) -
 	 		Number of rows to be buffered before an INSERT statement is issued.
-	  
+	  insert [ design pattern ]
 	 	$flags (integer) -
 	 		A combination of the following flags :
 	 		- INSERT_FLAGS_IGNORE :
@@ -129,6 +129,9 @@ class  DbBufferedInsert		extends  DbBufferedOperation
 	 *-------------------------------------------------------------------------------------------------------------*/
 	protected function  BuildQuery ( )
 	   {
+	
+	
+	
 		/***
 			Using the catenation operator instead of creating an array of row values then imploding it 
 			when building the query string introduces a small performance gain of around 5% on large buffers.
