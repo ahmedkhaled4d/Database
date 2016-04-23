@@ -15,8 +15,7 @@
   
  		$updater -> Flush ( ) ;
 
-    AUTHOR
-         Ahmed Khaled Mohammed, 02/2016.
+    AUTHOR      Ahmed Khaled Mohammed, 02/2016.
 
  **************************************************************************************************************/
 require_once ( "DbBufferedOperation.php" ) ;
@@ -77,7 +76,7 @@ class  DbBufferedUpdate		extends  DbBufferedOperation
 		
 		$this -> WhereFieldNames	=  $where_fields ;
 		$this -> UpdateFieldNames	=  $field_names ;
-		$this -> MultiQuery		=  true ;
+		$this -> MultiQuery		=  true ;  // optional 
 
 		if  ( $this -> InnerBufferSize  >  $this -> BufferSize )
 			$this -> InnerBufferSize	=  $this -> BufferSize ;
@@ -92,16 +91,7 @@ class  DbBufferedUpdate		extends  DbBufferedOperation
 		- UpdateFieldNames
 
 	 *-------------------------------------------------------------------------------------------------------------*/
-	public function  __get ( $member )
-	   {
-		switch  ( $member )
-		   {
-			case	'WhereFieldNames'	:  return ( $this -> WhereFieldNames ) ;
-			case	'UpdateFieldNames'	:  return ( $this -> UpdateFieldNames ) ;
-			default :
-				trigger_error ( "Undefined property '$member'." ) ;
-		    }
-	    }
+
 
 
 	public function  __set  ( $member, $value )
@@ -115,6 +105,17 @@ class  DbBufferedUpdate		extends  DbBufferedOperation
 
 			default :
 				parent::__set ( $member, $value ) ;
+		    }
+	    }
+	    
+	 	public function  __get ( $member )
+	   {
+		switch  ( $member )
+		   {
+			case	'WhereFieldNames'	:  return ( $this -> WhereFieldNames ) ;
+			case	'UpdateFieldNames'	:  return ( $this -> UpdateFieldNames ) ;
+			default :
+				trigger_error ( "Undefined property '$member'." ) ;
 		    }
 	    }
 
